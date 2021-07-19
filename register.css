@@ -1,0 +1,254 @@
+/*GLOBAL*/
+body {
+    background: #EDE9E5;
+    overflow-x: hidden;
+  }
+  
+  h2 {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-size: 24pt;
+  }
+  @media only screen and (max-width: 480px) {
+    h2 {
+      font-size: 18pt;
+    }
+  }
+  
+  .sub-title-white {
+    color: #EDE9E5;
+  }
+  @media only screen and (max-width: 480px) {
+    .sub-title-white {
+      position: relative;
+      right: 2.2;
+    }
+  }
+  
+  .sub-title-black {
+    color: #333333;
+  }
+  @media only screen and (max-width: 480px) {
+    .sub-title-black {
+      position: relative;
+      right: 2.2;
+    }
+  }
+  
+  /*TOP VAR*/
+  .container-fluid {
+    margin: 0%;
+    padding: 0%;
+  }
+  
+  .top-var {
+    width: 100%;
+    background: #2F4056;
+    color: #EDE9E5;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    position: fixed;
+    z-index: 9999999;
+  }
+  @media only screen and (max-width: 480px) {
+    .top-var {
+      width: 23.8em;
+      height: 5em;
+      position: fixed;
+      padding-bottom: 5em;
+    }
+  }
+  
+  .top-nav {
+    padding: 1.5em 0em 1.5em 0em;
+    margin: 0%;
+    float: right;
+    position: relative;
+    right: 25em;
+  }
+  
+  .top-nav-item {
+    padding: 0.6em 1em;
+    margin: 0%;
+    display: inline-block;
+  }
+  
+  .logo {
+    margin: 1.5em;
+  }
+  @media only screen and (max-width: 480px) {
+    .logo {
+      width: 146, 5px;
+      height: 22.5px;
+      position: relative;
+      right: 1em;
+    }
+  }
+  
+  .bell {
+    margin: 1em;
+    position: relative;
+    left: 47em;
+  }
+  @media only screen and (max-width: 480px) {
+    .bell {
+      display: none;
+    }
+  }
+  
+  .user {
+    margin: 1em;
+    position: relative;
+    left: 47em;
+  }
+  @media only screen and (max-width: 480px) {
+    .user {
+      display: none;
+    }
+  }
+  
+  #icon-pointer:hover {
+    cursor: pointer;
+  }
+  
+  .pink-Square-item:hover {
+    border: solid #FA617B;
+    padding: 0.5em;
+    cursor: pointer;
+    color: #EDE9E5;
+  }
+  
+  .link-nav {
+    text-decoration: none;
+    color: #EDE9E5;
+  }
+  
+  /*TOP VAR*/
+  /*GLOBAL*/
+  .content {
+    margin-top: 8em;
+    position: relative;
+    right: 3em;
+  }
+  @media only screen and (max-width: 480px) {
+    .content {
+      position: relative;
+      right: 1em;
+    }
+  }
+  
+  .labels {
+    color: #333333;
+    font-family: "Lato", sans-serif;
+    font-size: 12px;
+    margin: 2em 0em 2em 0em;
+    padding: 0%;
+  }
+  
+  .text-field {
+    color: #333333;
+    font-size: 14px;
+    font-family: "Lato", sans-serif;
+    outline: none;
+    padding: 0%;
+  }
+  @media only screen and (max-width: 480px) {
+    .text-field {
+      font-size: 14pt;
+    }
+  }
+  
+  .icons {
+    margin: 0em 1em 2em 0em;
+  }
+  
+  .sing {
+    font-size: 14pt;
+    font-family: #00B8B3;
+    font-weight: 400;
+    color: #333333;
+    margin-bottom: 2em;
+  }
+  
+  .link {
+    color: #00B8B3;
+    text-decoration: none;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+  }
+  
+  .link:hover {
+    color: #00B8B3;
+  }
+  
+  .btn {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-size: 14pt;
+    color: #EDE9E5;
+    background: #FA617B;
+    margin: 0%;
+    width: 50%;
+  }
+  @media only screen and (max-width: 480px) {
+    .btn {
+      margin-top: 5em;
+    }
+  }
+  
+  .btn:hover {
+    color: #EDE9E5;
+  }
+  
+  /*FOOTER*/
+  .footer {
+    background: #2F4056;
+    color: #EDE9E5;
+    font-size: 12px;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    padding: 3em 0em 3em 5.5em;
+    margin-top: 2em;
+  }
+  @media only screen and (max-width: 480px) {
+    .footer {
+      padding: 3em 0em 3em 1em;
+      margin-top: 10em;
+    }
+  }
+  
+  .bottom-nav-item {
+    padding: 0em;
+    margin: 0%;
+    display: inline-block;
+  }
+  
+  .bottom-nav-link {
+    text-decoration: none;
+    font-family: "Lato", sans-serif;
+    font-size: 14px;
+    color: #EDE9E5;
+    font-weight: 700;
+  }
+  
+  .bottom-nav-link:hover {
+    color: #EDE9E5;
+  }
+  
+  .margin-bottom {
+    margin: 0em 0em 0em 1em;
+    padding: 0em;
+    position: relative;
+    right: 1em;
+  }
+  
+  .bottom-simbol {
+    margin: 0em 1em 0em 1em;
+  }
+  
+  /*FOOTER*/
+  @media only screen and (max-width: 600px) {
+    .top-var {
+      height: 1em;
+    }
+  }
