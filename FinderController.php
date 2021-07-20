@@ -53,6 +53,10 @@ class FinderController extends Controller
         //
         $event = Event::find($id);
         return view('details', compact('event'));
+
+        return view('categories', compact('event'));
+
+        return view('register', compact('event'));
     }
 
     public function book($id)
