@@ -69,7 +69,7 @@
 
                         <p>Have an acount? -<a href="#" class="link"> Sing in</a></p>
 
-                        <a href="/index" class="btn">REGISTER</a>
+                        <a href="/events" class="btn">REGISTER</a>
                     </div>
                 </div>
             </div>

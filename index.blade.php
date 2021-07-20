@@ -28,15 +28,16 @@
             <img src="./img/logo.png" alt="Logo de Event Finder" class="logo">
             <img src="./img/mobileLogo.png" alt="logo mobile" class="mobileLogo">
             <a href="#"><img src="./img/bell.png" alt="icono de campana" class=" bell"></a>
-            <a href="/register"><img src="./img/user.png" alt="Icono de usuario" class="user"></a>
             <ul class="top-nav">
                 <li class="top-nav-item"><a href="/events" class="link-nav"><span
                             class="pink-Square-item">HOME</span></a> </li>
                 <li class="top-nav-item"><a href="/categories" class="link-nav"><span
                             class="pink-Square-item">CATEGORIES</span></a> </li>
-                <li class="top-nav-item"><a href="/register" class="link-nav"><span
-                            class="pink-Square-item">REGISTER</span> </a></li>
+                <li class="top-nav-item"><a href="/registration" class="link-nav"><span
+                            class="pink-Square-item">REGISTER</span> 
+            </a></li>
             </ul>
+
             <!--MOBILE-->
             <div class="icono-menu">
                 <img src="./img/menu.png" alt="icono menu" id="hambuerguesa" class="hambuerguesa">
@@ -45,7 +46,7 @@
                     <ul class="cont-menu ul li">
                         <li><a id="Menu" href="/events">HOME</a></li>
                         <li><a id="Menu" href="/categories">CATEGORIES</a></li>
-                        <li><a id="Menu" href="/register">REGISTER</a></li>
+                        <li><a id="Menu" href="/registration">REGISTER</a></li>
                     </ul>
                 </div>
             </div>
@@ -56,9 +57,6 @@
             <!--MOBILE-->
         </nav>
     </div>
-
-
-
     <!--TOP VAR-->
 
     <!--COVER PAGE-->
@@ -80,7 +78,7 @@
                 @foreach ($events as $event)
                     
                     <div class="col-sm-3 ">
-                        <a href="{{ route('events.show', $event->id) }}">
+                        <a href="{{ route('events.show', $event->id) }}" class="linkImg">
                             <img src="./img/{{ $event->image}}" alt="imagen sobre caridad" class="img-size">
 
                             <p><span class="bold-img">{{$event->title}} </span> <br>
@@ -244,7 +242,7 @@
                                 class="bottom-simbol">|</span></a></li>
                     <li class="bottom-nav-item"><a class="bottom-nav-link"
                             href="/categories">CATEGORIES<span class="bottom-simbol">|</span></a></li>
-                    <li class="bottom-nav-item"><a class="bottom-nav-link" href="/register">REGISTER</a>
+                    <li class="bottom-nav-item"><a class="bottom-nav-link" href="/registration">REGISTER</a>
                     </li>
                 </ul>
             </nav>

@@ -26,15 +26,15 @@
     <!--TOP VAR-->
     <div class="container-fluid">
         <nav class="top-var">
-            <img src="../img/logo.png" alt="Logo de Event Finder" class="logo">
-            <a href="#"><img src="../img/bell.png" alt="icono de campana" class=" bell"></a>
-            <a href="/register"><img src="../img/user.png" alt="Icono de usuario" class="user"></a>
+            <img src="/img/logo.png" alt="Logo de Event Finder" class="logo">
+            <a href="#"><img src="/img/bell.png" alt="icono de campana" class=" bell"></a>
+    
             <ul class="top-nav">
                 <li class="top-nav-item"><a href="/events" class="link-nav"><span
                             class="pink-Square-item">HOME</span></a> </li>
                 <li class="top-nav-item"><a href="/categories" class="link-nav"><span
                             class="pink-Square-item">CATEGORIES</span></a> </li>
-                <li class="top-nav-item"><a href="/register" class="link-nav"><span
+                <li class="top-nav-item"><a href="/registration" class="link-nav"><span
                             class="pink-Square-item">REGISTER</span> </a></li>
             </ul>
         </nav>
@@ -48,8 +48,8 @@
                 <div class="col-sm-6">
                     <h2 class="sub-title-black">RESERVATIONS</h2>
 
-                    <img src="../img/{{ $event-> image }}" alt="imagen de banda de metal" class="img">
-                    <img src="../img/18.png" alt="mayor de edad icono" class="icon18">
+                    <img src="/img/{{ $event-> image }}" alt="imagen de banda de metal" class="img">
+                    <img src="/img/18.png" alt="mayor de edad icono" class="icon18" id='18'>
 
                     <h3 class="subtitle">Lorem ipsum dolor sit amet </h3>
                     <p class="important">La Sabana, San José <br>
@@ -69,30 +69,59 @@
                     </ul>
                     <!--STEPS FORM-->
 
-                    <div class="row labels">
-                        <label for="">FULL NAME</label>
-                        <input type="text" class="text-field">
-                    </div>
-                    <div class="row labels">
-                        <label for="">E-MAIL</label>
-                        <input type="text" class="text-field">
-                    </div>
-                    <div class="row labels">
-                        <label for="">CREDIT</label>
-                        <input type="text" class="text-field">
-                    </div>
-                    <div class="row labels">
-                        <label for="">SECURITY PIN</label>
-                        <input type="text" class="text-field">
-                    </div>
+                    <form action="{{ route('register.custom') }}" method="POST">
+                            @csrf
+                            <div class="form-group mb-3">
+                                <input type="text" placeholder="Fullname" id="fullname" class="form-control" name="fullname"
+                                    required autofocus>
+                                @if ($errors->has('fullname'))
+                                <span class="text-danger">{{ $errors->first('fullname') }}</span>
+                                @endif
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <input type="text" placeholder="Email" id="email_address" class="form-control"
+                                    name="email" required autofocus>
+                                @if ($errors->has('email'))
+                                <span class="text-danger">{{ $errors->first('email') }}</span>
+                                @endif
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <input type="text" placeholder="Cantidad (Niños)" id="qkids" class="form-control"
+                                    name="qkids" required autofocus>
+                                @if ($errors->has('qkids'))
+                                <span class="text-danger">{{ $errors->first('qkids') }}</span>
+                                @endif
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <input type="text" placeholder="Cantidad (Adultos)" id="qadults" class="form-control"
+                                    name="qkids" required autofocus>
+                                @if ($errors->has('qadults'))
+                                <span class="text-danger">{{ $errors->first('qadults') }}</span>
+                                @endif
+                        
+                            </div>
+
+                            <label>Numbers of adults </label> <input type="number" name="" id="valor1" step="0.1" oninput="calcular()"> <br> <br>
+                            <label>Numbers of Childrens </label> <input type="number" name="" id="valor2" step="1" oninput="calcular()"> <br> <br>
+                            <label>Totals </label> <input type="number" name="" id="total" step="1" oninput="calcular()"> <br> <br>
+
+                            <div class="form-group mb-3">
+                                <div class="checkbox">
+                                   
+                                </div>
+                            </div>
+
+                            <div class="d-grid mx-auto">
+                                <button type="submit" class="btn btn-dark btn-block">Sign up</button>
+                            </div>
+                        </form>
+
 
                     <!--SLIDER-->
-                    <div class="slidecontainer">
-                        <input type="range" min="1" max="5" value="1" class="slider" id="myRange">
-                        <p> Max-Tickets-Adults: <span id="demo"></span></p>
-
-                        
-                    </div>
+                    
 
                     <script>
                         var slider = document.getElementById("myRange");
@@ -103,9 +132,26 @@
                             output.innerHTML = this.value;
                         }
                     </script>
+
+                    <script type="text/javascript">
+                     
+                     function calcular() {
+                         try{
+                    
+                            var a = parseFloat(document.getElementById("valor1").value) || 0,
+                            b = parseFloat(document.getElementById("valor2").value) || 0,
+                            
+                            document.getElementById("total").value = a  b ;
+                         }catch (e) {}
+                         
+                     }
+
+
+
+                    </script>
                     <!--SLIDER-->
 
-                    <a href="/events" class="btn-book">BOOK</a>
+                    <a href="/events/book/{{$event->id}}" class="btn-book">BOOK</a>
                 </div>
                 <!--STEPS FORM-->
             </div>
@@ -122,7 +168,7 @@
                                 class="bottom-simbol">|</span></a></li>
                     <li class="bottom-nav-item"><a class="bottom-nav-link"
                             href="/categories">CATEGORIES<span class="bottom-simbol">|</span></a></li>
-                    <li class="bottom-nav-item"><a class="bottom-nav-link" href="/register">REGISTER</a>
+                    <li class="bottom-nav-item"><a class="bottom-nav-link" href="/registration">REGISTER</a>
                     </li>
                 </ul>
             </nav>

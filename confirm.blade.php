@@ -26,15 +26,15 @@
     <!--TOP VAR-->
     <div class="container-fluid">
         <nav class="top-var">
-            <img src="../img/logo.png" alt="Logo de Event Finder" class="logo">
-            <a href="#"><img src="../img/bell.png" alt="icono de campana" class=" bell"></a>
-            <a href="/register"><img src="../img/user.png" alt="Icono de usuario" class="user"></a>
+            <img src="/img/logo.png" alt="Logo de Event Finder" class="logo">
+            <a href="#"><img src="/img/bell.png" alt="icono de campana" class=" bell"></a>
+            
             <ul class="top-nav">
                 <li class="top-nav-item"><a href="/index" class="link-nav"><span
                             class="pink-Square-item">HOME</span></a> </li>
                 <li class="top-nav-item"><a href="/categories" class="link-nav"><span
                             class="pink-Square-item">CATEGORIES</span></a> </li>
-                <li class="top-nav-item"><a href="/register" class="link-nav"><span
+                <li class="top-nav-item"><a href="/registration" class="link-nav"><span
                             class="pink-Square-item">REGISTER</span> </a></li>
             </ul>
         </nav>
@@ -48,14 +48,13 @@
                 <div class="col-sm-12 ">
                     <h2 class="sub-title-black">RECIPE</h2>
 
-                    <img src="../img/ev4.jpg" alt="banda metal" class="img">
-                    <img src="../img/18.png" alt="mayor de edad icono" class="icon18">
+                    <img src="/img/ev4.jpg" alt="banda metal" class="img">
+                    <img src="/img/18.png" alt="mayor de edad icono" class="icon18">
 
-                    <h3 class="subtitle">Lorem ipsum dolor sit amet </h3>
-                    <p class="important">La Sabana, San José <br>
-                        May 20th <br>
-                        7pm - 11pm <br>
-                        $10 ticket <br></p>
+                    <h3 class="subtitle">{{ $event->title}}</h3>
+                    <p class="important">{{ $event->location}} <br>
+                    {{ $event->when}} <br> ${{ $event->padults }} ticket </p>
+                    
 
                     <p class="important">Nombre: Aaron M. Palacios <br>
                         Ticket(s): <br></p>
@@ -119,7 +118,7 @@
                                 class="bottom-simbol">|</span></a></li>
                     <li class="bottom-nav-item"><a class="bottom-nav-link"
                             href="/categories">CATEGORIES<span class="bottom-simbol">|</span></a></li>
-                    <li class="bottom-nav-item"><a class="bottom-nav-link" href="/register">REGISTER</a>
+                    <li class="bottom-nav-item"><a class="bottom-nav-link" href="/registration">REGISTER</a>
                     </li>
                 </ul>
             </nav>

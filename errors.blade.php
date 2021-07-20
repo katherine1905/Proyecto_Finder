@@ -38,7 +38,7 @@
                         <spanclass="pink-Square-item">CATEGORIES</span>
                     </a> </li>
 
-                <li class="top-nav-item"><a href="/register" class="link-nav"><span
+                <li class="top-nav-item"><a href="/registration" class="link-nav"><span
                             class="pink-Square-item">REGISTER</span></a></li>
             </ul>
         </nav>
@@ -62,7 +62,7 @@
                                 class="bottom-simbol">|</span></a></li>
                     <li class="bottom-nav-item"><a class="bottom-nav-link"
                             href="/categories">CATEGORIES<span class="bottom-simbol">|</span></a></li>
-                    <li class="bottom-nav-item"><a class="bottom-nav-link" href="/register">REGISTER</a>
+                    <li class="bottom-nav-item"><a class="bottom-nav-link" href="/registration">REGISTER</a>
                     </li>
                 </ul>
             </nav>

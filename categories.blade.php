@@ -28,8 +28,7 @@
         <nav class="top-var">
             <img src="../img/logo.png" alt="Logo de Event Finder" class="logo">
             <a href="#"><img src="../img/bell.png" alt="icono de campana" class=" bell" id="icon-pointer"></a>
-            <a href="/register"><img src="../img/user.png" alt="Icono de usuario" class="user"
-                    id="icon-pointer"></a>
+            
             <ul class="top-nav">
                 <li class="top-nav-item"><a href="/events" class="link-nav"><span
                             class="pink-Square-item">HOME</span></a></li>
@@ -38,7 +37,7 @@
                         <spanclass="pink-Square-item">CATEGORIES</span>
                     </a> </li>
 
-                <li class="top-nav-item"><a href="/register" class="link-nav"><span
+                <li class="top-nav-item"><a href="/registration" class="link-nav"><span
                             class="pink-Square-item">REGISTER</span></a></li>
             </ul>
         </nav>
@@ -53,19 +52,27 @@
                     <h2 class="sub-title-black">CATEGORIES</h2>
 
                 </div>
+
+            
             </div>
         </div>
+
     </section>
+    
     <!--CONTENT-->
 
     <!--FIRST ROW-->
+
+    
     <section class="row justify-content-center content">
 
         <div class="col-10 img-padding">
             <h3 class="sub-title-categorie">MUSIC</h3>
             <div class="row">
+
+          
                 <div class="col-sm-3 ">
-                    <a href="#"><img src="../img/m4.jpg" alt="imagen sobre musica" class="img-size"></a>
+                    <a href="#"><img src="/img/m4.jpg" alt="imagen sobre musica" class="img-size"></a>
                     <p><span class="bold-img">Lorem ipsum dolor sit amet </span> <br>
                         La Sabana, San José / July 2nd <br>
                         8pm - 11pm <br>
@@ -74,7 +81,7 @@
                 </div>
 
                 <div class="col-sm-3 ">
-                    <a href="#"><img src="../img/m3.jpg" alt="imagen sobre musica" class="img-size"></a>
+                    <a href="#"><img src="/img/m3.jpg" alt="imagen sobre musica" class="img-size"></a>
                     <p><span class="bold-img">Lorem ipsum dolor sit amet </span> <br>
                         La Giralda, Alajuela / July 10th <br>
                         7pm - 11pm <br>
@@ -184,7 +191,7 @@
                 </div>
 
                 <div class="col-sm-3 ">
-                    <a href="../errors/sold.html"><img src="../img/d3.jpg" alt="imagen sobre foros" class="img-size"></a>
+                    <a href="/errors"><img src="../img/d3.jpg" alt="imagen sobre foros" class="img-size"></a>
                     <p><span class="bold-img">Lorem ipsum dolor sit amet </span> <br>
                         La Sabana, San José / July 5th <br>
                         9am - 11pm <br>
@@ -250,7 +257,7 @@
                                 class="bottom-simbol">|</span></a></li>
                     <li class="bottom-nav-item"><a class="bottom-nav-link"
                             href="/categories">CATEGORIES<span class="bottom-simbol">|</span></a></li>
-                    <li class="bottom-nav-item"><a class="bottom-nav-link" href="/register">REGISTER</a>
+                    <li class="bottom-nav-item"><a class="bottom-nav-link" href="/registration">REGISTER</a>
                     </li>
                 </ul>
             </nav>

@@ -61,6 +61,8 @@ Route::get('/categories', function () {
     return view('categories');
 });
 
+
+
 Route::get('/register', function () {
     return view('register');
 });
@@ -71,6 +73,10 @@ Route::get('/errors', function () {
 
 Route::get('/confirm', function () {
     return view('confirm');
+});
+
+Route::get('/crear', function () {
+    return view('crear');
 });
 
 Route::get('/dashboard', [CustomAuthController::class, 'dashboard']); 

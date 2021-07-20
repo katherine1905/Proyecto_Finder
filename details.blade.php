@@ -26,16 +26,15 @@
     <!--TOP VAR-->
     <div class="container-fluid">
         <nav class="top-var">
-            <img src="../img/logo.png" alt="Logo de Event Finder" class="logo">
-            <a href="#"><img src="../img/bell.png" alt="icono de campana" class=" bell" id="icon-pointer"></a>
-            <a href="/register"><img src="../img/user.png" alt="Icono de usuario" class="user"
-                    id="icon-pointer"></a>
+            <img src="/img/logo.png" alt="Logo de Event Finder" class="logo">
+            <a href="#"><img src="/img/bell.png" alt="icono de campana" class=" bell" id="icon-pointer"></a>
+            
             <ul class="top-nav">
                 <li class="top-nav-item"><a href="/events" class="link-nav"><span
                             class="pink-Square-item">HOME</span></a> </li>
                 <li class="top-nav-item"><a href="/categories" class="link-nav"><span
                             class="pink-Square-item">CATEGORIES</span></a> </li>
-                <li class="top-nav-item"><a href="/register" class="link-nav"><span
+                <li class="top-nav-item"><a href="/registration" class="link-nav"><span
                             class="pink-Square-item">REGISTER</span> </a></li>
             </ul>
         </nav>
@@ -48,8 +47,8 @@
                 <div class="col-sm-8">
                     <h2 class="sub-title-black">COMING SOON</h2>
 
-                    <img src="../img/{{ $event-> image }}" alt="imagen de banda de metal" class="img">
-                    <img src="../img/18.png" alt="mayor de edad icono" class="icon18">
+                    <img src="/img/{{ $event-> image }}" alt="imagen de evento" class="img">
+                    <img src="/img/18.png" alt="mayor de edad icono" class="icon18">
 
 
                     
@@ -82,7 +81,7 @@
                                 class="bottom-simbol">|</span></a></li>
                     <li class="bottom-nav-item"><a class="bottom-nav-link"
                             href="/categories">CATEGORIES<span class="bottom-simbol">|</span></a></li>
-                    <li class="bottom-nav-item"><a class="bottom-nav-link" href="/register">REGISTER</a>
+                    <li class="bottom-nav-item"><a class="bottom-nav-link" href="/registration">REGISTER</a>
                     </li>
                 </ul>
             </nav>

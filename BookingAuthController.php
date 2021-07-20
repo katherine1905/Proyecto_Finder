@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Hash;
 use Session;
-use App\Models\User;
+use App\Models\Booking;
 use Illuminate\Support\Facades\Auth;
 
-class CustomAuthController extends Controller
+class BookingAuthController extends Controller
 {
 
     public function index()
@@ -19,13 +19,13 @@ class CustomAuthController extends Controller
     public function customLogin(Request $request)
     {
         $request->validate([
+            'fullname' => 'required',
             'email' => 'required',
-            'password' => 'required',
         ]);
    
-        $credentials = $request->only('email', 'password');
+        $credentials = $request->only('fullname', 'email');
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('crear')
+            return redirect()->intended('dashboard')
                         ->withSuccess('Signed in');
         }
   
@@ -40,30 +40,30 @@ class CustomAuthController extends Controller
     public function customRegistration(Request $request)
     {  
         $request->validate([
-            'name' => 'required',
+            'fullname' => 'required',
             'email' => 'required|email|unique:users',
-            'password' => 'required|min:6',
+            'qkids' => 'required|min:6',
         ]);
            
         $data = $request->all();
         $check = $this->create($data);
          
-        return redirect("login")->withSuccess('You have signed-in');
+        return redirect("dashboard")->withSuccess('You have signed-in');
     }
 
     public function create(array $data)
     {
-      return User::create([
+      return Booking::create([
         'name' => $data['name'],
         'email' => $data['email'],
-        'password' => Hash::make($data['password'])
+        'qkids' => Hash::make($data['qkids'])
       ]);
     }    
     
     public function dashboard()
     {
         if(Auth::check()){
-            return view('crear');
+            return view('auth.dashboard');
         }
   
         return redirect("login")->withSuccess('You are not allowed to access');
@@ -73,6 +73,6 @@ class CustomAuthController extends Controller
         Session::flush();
         Auth::logout();
   
-        return redirect('index');
+        return redirect('login');
     }
 }
