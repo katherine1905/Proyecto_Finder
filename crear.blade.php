@@ -18,7 +18,7 @@
         rel="stylesheet">
     <!--font-->
 
-    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/app.css">
     <title>EventFinder</title>
 </head>
 
@@ -36,7 +36,7 @@
             <div class="form-group">
                 <strong>Image:</strong>
                 <input id="image" type="file" name="image" class="form-control">
-                <img id="preview" src="{{url('/img/c3.jpg')}}" alt="preview image" style="height:150px">
+                <img id="preview" src="{{url('/img/c4.jpg')}}" alt="preview image" style="height:250px">
             </div>
         </div>
         <!-- title -->
@@ -46,15 +46,8 @@
                 <input type="text" name="title" class="form-control" placeholder="Titulo">
             </div>
         </div>
-        <!-- category -->
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Category:</strong>
-                <select name="categories_id">
-                
-                </select>
-            </div>
-        </div>
+      
+        
         <!-- description -->
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
@@ -62,10 +55,18 @@
                 <textarea class="form-control" style="height:150px" name="description" placeholder="Description"></textarea>
             </div>
         </div>
+
+        <!-- Type -->
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Type:</strong>
+                <input type="text" name="type" class="form-control" placeholder="Sitio del evento">
+            </div>
+        </div>
         <!-- location -->
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Place:</strong>
+                <strong>Location:</strong>
                 <input type="text" name="location" class="form-control" placeholder="Sitio del evento">
             </div>
         </div>
@@ -73,48 +74,62 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Date:</strong><br>
-                <input type="datetime-local" name="dateTime" value="2021-07-07T19:30" min="2021-06-01T00:00" max="2023-12-16T00:00">
+                <input type="datetime-local" name="when" value="2021-07-07T19:30" min="2021-06-01T00:00" max="2023-12-16T00:00">
+            </div>
+        </div>
+            <!-- Stars-->
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Starts:</strong>
+                <input type="number" name="starts" class="form-control">
+            </div>
+        </div>
+
+        <!-- Duration-->
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Duration:</strong>
+                <input type="number" name="duration" class="form-control">
+            </div>
+        </div>
+
+        <!-- Status-->
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Status:</strong>
+                <input type="number" name="status" class="form-control">
+            </div>
+        </div>
+
+        <!-- Store-->
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Store:</strong>
+                <input type="number" name="store" class="form-control">
             </div>
         </div>
         <!-- Precio adulto -->
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Adult Price:</strong>
-                <input type="number" name="priceAdult" class="form-control">
+                <input type="number" name="padults" class="form-control">
             </div>
         </div>
         <!-- precio ninos -->
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Children Price:</strong>
-                <input type="number" name="priceKid" class="form-control">
+                <input type="number" name="pkids" class="form-control">
             </div>
         </div>
-        <!-- Disponibilidad -->
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <strong>Available:</strong><br>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="available" value="1" checked>
-                <label class="form-check-label">Available</label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="available" value="0">
-                <label class="form-check-label">Not Available</label>
-            </div>
-        </div>
-        <!-- Inventario -->
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Maximum Capacity:</strong>
-                <input type="number" name="inventory" class="form-control"><br>
-            </div>
-        </div>
+        
         <!-- boton -->
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-            <button type="submit" class="btn btn-primary" href="events" >Add</button>
+            <button type="submit" class="btn btn-primary" >Add</button>
+
         </div>
     </div>
-
+<a href="/events" class="btn-confirm">Home</a>
 </form>
 
 </body>

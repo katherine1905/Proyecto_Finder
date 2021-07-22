@@ -7,72 +7,47 @@ use Hash;
 use Session;
 use App\Models\Booking;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Event;
+
 
 class BookingAuthController extends Controller
 {
 
     public function index()
     {
-        return view('auth.login');
-    }  
-      
-    public function customLogin(Request $request)
-    {
-        $request->validate([
-            'fullname' => 'required',
-            'email' => 'required',
-        ]);
-   
-        $credentials = $request->only('fullname', 'email');
-        if (Auth::attempt($credentials)) {
-            return redirect()->intended('dashboard')
-                        ->withSuccess('Signed in');
-        }
-  
-        return redirect("login")->withSuccess('Login details are not valid');
+        return view('events');
     }
 
-    public function registration()
-    {
-        return view('auth.registration');
-    }
-
-    public function customRegistration(Request $request)
-    {  
-        $request->validate([
-            'fullname' => 'required',
-            'email' => 'required|email|unique:users',
-            'qkids' => 'required|min:6',
-        ]);
-           
-        $data = $request->all();
-        $check = $this->create($data);
-         
-        return redirect("dashboard")->withSuccess('You have signed-in');
-    }
 
     public function create(array $data)
     {
-      return Booking::create([
-        'name' => $data['name'],
-        'email' => $data['email'],
-        'qkids' => Hash::make($data['qkids'])
-      ]);
-    }    
-    
-    public function dashboard()
-    {
-        if(Auth::check()){
-            return view('auth.dashboard');
-        }
-  
-        return redirect("login")->withSuccess('You are not allowed to access');
+        return Booking::create([
+            'fullname' => $data['fullname'],
+            'email' => $data['email'],
+            'qkids' => $data['qkids'],
+            'qadults' => $data['qadults'],
+            'total' => $data['total'],
+        ]);
     }
+
     
-    public function signOut() {
-        Session::flush();
-        Auth::logout();
-  
-        return redirect('login');
+    public function store(Request $request)
+    {
+
+        $request->validate([
+            'events_id'  => 'required',
+            'fullname' => 'required',
+            'email'  => 'required',
+            'qkids'  => 'required',
+            'qadults'  => 'required',
+            'total'  => 'required'
+        ]);
+
+        $data = $request->all();
+        Booking::create($data);
+
+        $event = Event::find($request->events_id);
+        return view('recibo', compact('data', 'event'));
+
     }
 }

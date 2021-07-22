@@ -32,7 +32,7 @@
             <ul class="top-nav">
                 <li class="top-nav-item"><a href="/events" class="link-nav"><span
                             class="pink-Square-item">HOME</span></a> </li>
-                <li class="top-nav-item"><a href="/categories" class="link-nav"><span
+                <li class="top-nav-item"><a href="/events/categories" class="link-nav"><span
                             class="pink-Square-item">CATEGORIES</span></a> </li>
                 <li class="top-nav-item"><a href="/registration" class="link-nav"><span
                             class="pink-Square-item">REGISTER</span> </a></li>
@@ -64,7 +64,8 @@
                     <p class="important">{{ $event->location}} <br>
                         {{ $event->when}} <br>
                         7pm - 11pm <br>
-                        ${{ $event->padults }} ticket</p>
+                        ${{ $event->padults }} ticket<br>
+                        ${{ $event->pkids }} ticket</p>
 
                         <a href="/events/book/{{$event->id}}" class="btn">BOOK</a>
                 </div>
@@ -80,7 +81,7 @@
                     <li class="bottom-nav-item"><a class="bottom-nav-link" href="/events">HOME <span
                                 class="bottom-simbol">|</span></a></li>
                     <li class="bottom-nav-item"><a class="bottom-nav-link"
-                            href="/categories">CATEGORIES<span class="bottom-simbol">|</span></a></li>
+                            href="/events/categories">CATEGORIES<span class="bottom-simbol">|</span></a></li>
                     <li class="bottom-nav-item"><a class="bottom-nav-link" href="/registration">REGISTER</a>
                     </li>
                 </ul>

@@ -31,7 +31,7 @@
             <ul class="top-nav">
                 <li class="top-nav-item"><a href="/events" class="link-nav"><span
                             class="pink-Square-item">HOME</span></a> </li>
-                <li class="top-nav-item"><a href="/categories" class="link-nav"><span
+                <li class="top-nav-item"><a href="/events/categories" class="link-nav"><span
                             class="pink-Square-item">CATEGORIES</span></a> </li>
                 <li class="top-nav-item"><a href="/registration" class="link-nav"><span
                             class="pink-Square-item">REGISTER</span> 
@@ -45,7 +45,7 @@
                 <div class="cont-menu active" id="menu">
                     <ul class="cont-menu ul li">
                         <li><a id="Menu" href="/events">HOME</a></li>
-                        <li><a id="Menu" href="/categories">CATEGORIES</a></li>
+                        <li><a id="Menu" href="/events/categories">CATEGORIES</a></li>
                         <li><a id="Menu" href="/registration">REGISTER</a></li>
                     </ul>
                 </div>
@@ -241,7 +241,7 @@
                     <li class="bottom-nav-item"><a class="bottom-nav-link" href="/events">HOME <span
                                 class="bottom-simbol">|</span></a></li>
                     <li class="bottom-nav-item"><a class="bottom-nav-link"
-                            href="/categories">CATEGORIES<span class="bottom-simbol">|</span></a></li>
+                            href="/events/categories">CATEGORIES<span class="bottom-simbol">|</span></a></li>
                     <li class="bottom-nav-item"><a class="bottom-nav-link" href="/registration">REGISTER</a>
                     </li>
                 </ul>

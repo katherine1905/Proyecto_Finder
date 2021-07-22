@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FinderController;
 use App\Http\Controllers\CustomAuthController;
+use App\Http\Controllers\BookingAuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,11 +58,7 @@ Route::get('/index', function () {
 
 Route::get('/events/book/{id}', [FinderController::class, 'book']);
 
-Route::get('/categories', function () {
-    return view('categories');
-});
-
-
+Route::get('events/categories', [FinderController::class, 'categories']  );
 
 Route::get('/register', function () {
     return view('register');
@@ -79,12 +76,18 @@ Route::get('/crear', function () {
     return view('crear');
 });
 
+
+
 Route::get('/dashboard', [CustomAuthController::class, 'dashboard']); 
 Route::get('/login', [CustomAuthController::class, 'index'])->name('login');
 Route::post('/custom-login', [CustomAuthController::class, 'customLogin'])->name('login.custom'); 
 Route::get('/registration', [CustomAuthController::class, 'registration'])->name('register-user');
 Route::post('/custom-registration', [CustomAuthController::class, 'customRegistration'])->name('register.custom'); 
 Route::get('/signout', [CustomAuthController::class, 'signOut'])->name('signout');
+
+
+Route::resource('/recibo', BookingAuthController::class);
+
 
 Route::resource('events', FinderController::class);
 

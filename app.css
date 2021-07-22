@@ -1,1 +1,12 @@
 
+a {
+    color: hsl(303, 85%, 64%);
+    text-decoration: none;
+}
+
+.btn-dark {
+    color: #fff;
+    background-color: #e87799;
+    border-color: #a1505014;
+
+}

@@ -49,13 +49,13 @@
                     <h2 class="sub-title-black">RESERVATIONS</h2>
 
                     <img src="/img/{{ $event-> image }}" alt="imagen de banda de metal" class="img">
-                    <img src="/img/18.png" alt="mayor de edad icono" class="icon18" id='18'>
 
                     <h3 class="subtitle">Lorem ipsum dolor sit amet </h3>
                     <p class="important">La Sabana, San José <br>
                         May 20th <br>
                         7pm - 11pm <br>
-                        $10 ticket</p>
+                        Adults $10 ticket  <br> 
+                        Kids $5 ticket</p>
 
                         <a href="/events" class="btn-return">RETURN</a>
                 </div>
@@ -69,10 +69,13 @@
                     </ul>
                     <!--STEPS FORM-->
 
-                    <form action="{{ route('register.custom') }}" method="POST">
+                    <form action="{{ route('recibo.store') }}" method="POST">
+                        
                             @csrf
                             <div class="form-group mb-3">
-                                <input type="text" placeholder="Fullname" id="fullname" class="form-control" name="fullname"
+                                <p>Fullname</p>
+
+                                <input type="text" placeholder="Your name" id="fullname" class="form-control" name="fullname"
                                     required autofocus>
                                 @if ($errors->has('fullname'))
                                 <span class="text-danger">{{ $errors->first('fullname') }}</span>
@@ -80,7 +83,9 @@
                             </div>
 
                             <div class="form-group mb-3">
-                                <input type="text" placeholder="Email" id="email_address" class="form-control"
+                                <p>Email</p>
+
+                                <input type="text" placeholder="email@gmail.com" id="email_address" class="form-control"
                                     name="email" required autofocus>
                                 @if ($errors->has('email'))
                                 <span class="text-danger">{{ $errors->first('email') }}</span>
@@ -88,70 +93,52 @@
                             </div>
 
                             <div class="form-group mb-3">
-                                <input type="text" placeholder="Cantidad (Niños)" id="qkids" class="form-control"
-                                    name="qkids" required autofocus>
+                                <p>Kid's price $<span id="pKids">{{$event->pkids}}</span></p>
+                                <input type="number" placeholder="Please set the ticket's number" id="qkids" class="form-control"
+                                    name="qkids" required autofocus max=50 oninput="multiplicar()">
                                 @if ($errors->has('qkids'))
                                 <span class="text-danger">{{ $errors->first('qkids') }}</span>
                                 @endif
                             </div>
 
                             <div class="form-group mb-3">
-                                <input type="text" placeholder="Cantidad (Adultos)" id="qadults" class="form-control"
-                                    name="qkids" required autofocus>
+                            <p>Adult's price $<span id="pAdults">{{$event->padults}} </span ></p>
+                                <input type="number" placeholder="Please set the ticket's number" id="qadults" class="form-control"
+                                    name="qadults" required autofocus max=50 oninput="multiplicar()">
                                 @if ($errors->has('qadults'))
                                 <span class="text-danger">{{ $errors->first('qadults') }}</span>
                                 @endif
-                        
                             </div>
 
-                            <label>Numbers of adults </label> <input type="number" name="" id="valor1" step="0.1" oninput="calcular()"> <br> <br>
-                            <label>Numbers of Childrens </label> <input type="number" name="" id="valor2" step="1" oninput="calcular()"> <br> <br>
-                            <label>Totals </label> <input type="number" name="" id="total" step="1" oninput="calcular()"> <br> <br>
+                            <p>Total:<br>
+                                <span id="total" ></span></p>
 
-                            <div class="form-group mb-3">
-                                <div class="checkbox">
-                                   
-                                </div>
-                            </div>
+                            <input type="text" class="visually-hidden" name='total'id="totalFinal">
+
+                            <input type="text" class="visually-hidden" name='events_id' value="{{ $event-> id }}">
 
                             <div class="d-grid mx-auto">
-                                <button type="submit" class="btn btn-dark btn-block">Sign up</button>
+                                <button  class="btn-sing" type="submit">Book</button>
                             </div>
-                        </form>
+                        </form>                    
 
-
-                    <!--SLIDER-->
-                    
-
+                    <!--calcular precio-->
                     <script>
-                        var slider = document.getElementById("myRange");
-                        var output = document.getElementById("demo");
-                        output.innerHTML = slider.value;
 
-                        slider.oninput = function () {
-                            output.innerHTML = this.value;
+                        function multiplicar(){
+
+                            let numero1 = document.getElementById('qkids').value * 5;
+                            let numero2 = document.getElementById('qadults').value * 10;
+
+                            let total = numero1 + numero2; 
+
+                            document.getElementById('total').innerText = total;
+
+                            document.getElementById('totalFinal').value = total;
+
                         }
                     </script>
-
-                    <script type="text/javascript">
-                     
-                     function calcular() {
-                         try{
-                    
-                            var a = parseFloat(document.getElementById("valor1").value) || 0,
-                            b = parseFloat(document.getElementById("valor2").value) || 0,
-                            
-                            document.getElementById("total").value = a  b ;
-                         }catch (e) {}
-                         
-                     }
-
-
-
-                    </script>
-                    <!--SLIDER-->
-
-                    <a href="/events/book/{{$event->id}}" class="btn-book">BOOK</a>
+                    <!--calcular precio-->
                 </div>
                 <!--STEPS FORM-->
             </div>
